@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  --color-eco-green: #458C5A;
+  --color-eco-green-light: #B5D992;
+  --color-eco-green-dark: #124C2E;
+  --color-eco-bg: #E8F0D3;
+  --color-eco-text: #445544;
+  --color-eco-pill: #ECF2E6;
+  --color-eco-btn-bg: #CFE5B6;
+}
+
+@layer base {
+  html, body, #root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+/* Glassmorphism utilities */
+@layer utilities {
+  .glass {
+    @apply bg-white/60 backdrop-blur-md border border-white/40 shadow-sm;
+  }
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-lg border border-white/50 shadow-md rounded-2xl;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  input[type="range"].slider-thumb-premium {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+  }
+  input[type="range"].slider-thumb-premium::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: none;
+  }
+  input[type="range"].slider-thumb-premium::-moz-range-track {
+    background: transparent;
+    border: none;
+  }
+  .slider-thumb-premium::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: currentColor;
+    border: 3px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.15s ease-in-out;
+    margin-top: 0;
+  }
+  .slider-thumb-premium::-moz-range-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: currentColor;
+    border: 3px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.15s ease-in-out;
+  }
+  .slider-thumb-premium::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+  }
+  .slider-thumb-premium::-moz-range-thumb:hover {
+    transform: scale(1.2);
+  }
+  
+  .animate-blob {
+    animation: blob 8s infinite ease-in-out;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
