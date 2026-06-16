@@ -169,7 +169,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
       const commuteGreenChall = challenges.find(c => c.id === 'c1c1c1c1-1111-1111-1111-111111111111');
       if (commuteGreenChall && !commuteGreenChall.completed && greenTransitCount >= 3) {
-        console.log("Auto-completing Commute Green Challenge!");
         await completeChallenge('c1c1c1c1-1111-1111-1111-111111111111');
       }
 
@@ -185,7 +184,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
       const plantFeastChall = challenges.find(c => c.id === 'c2c2c2c2-2222-2222-2222-222222222222');
       if (plantFeastChall && !plantFeastChall.completed && plantMealCount >= 3) {
-        console.log("Auto-completing Plant-Based Feast Challenge!");
         await completeChallenge('c2c2c2c2-2222-2222-2222-222222222222');
       }
 
@@ -203,7 +201,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
       const powerSaverChall = challenges.find(c => c.id === 'c3c3c3c3-3333-3333-3333-333333333333');
       if (powerSaverChall && !powerSaverChall.completed && energySaveCount >= 3) {
-        console.log("Auto-completing Power Saver Challenge!");
         await completeChallenge('c3c3c3c3-3333-3333-3333-333333333333');
       }
     };
